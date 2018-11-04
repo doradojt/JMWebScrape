@@ -1,0 +1,16 @@
+Questions
+
+- Can you walk me through the Mongo connection that runs between the app and then the python
+file, specifically the 
+
+@app.route("/")
+def index():
+    listings = mongo.db.listings.find_one()
+    return render_template("index.html", listings=listings)
+
+
+@app.route("/scrape")
+def scraper():
+
+portion of the craigslist class work and how it connects with the 
+multiple dictionaries we made for mars?
