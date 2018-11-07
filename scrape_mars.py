@@ -17,7 +17,7 @@ def scrape_one():
 
     articles = soup.find('li', class_='slide')
 
-    text = article .find(class_='list_text')
+    text = articles.find(class_='list_text')
     news_title = text.find(class_='content_title')        
     news_title_name = news_title.find('a').get_text()
     news_p = text.find(class_='article_teaser_body').get_text()
@@ -61,17 +61,16 @@ def scrape_three():
     return mars_weather
 
 
-def scrape_four():
-    url = 'http://space-facts.com/mars/'
+#def scrape_four():
+    #url = 'http://space-facts.com/mars/'
     #select columns and 0 table
     #used df and then column headings
-    tables = pd.read_html(url)
-    df = tables[0]
-    df.set_index('0')
-    df.columns=["",""]
-    mars_table = df.to_html(classes="table table-striped")
+    #tables = pd.read_html(url)
+    #df = tables[0]
+    #df.columns=["",""]
+    #mars_table = df.to_html(classes="table table-striped")
 
-    return mars_table
+    #return mars_table
    
 def scrape_five():
     browser = init_browser()

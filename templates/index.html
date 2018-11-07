@@ -17,13 +17,14 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Know Before you Go!</a></p>
     </div>
 
-    
+    {% for mars in mars%}
     <div class="row" id="craiglist-listings">
       <div class="col-md-12">
-        <h4 class="heading">{{marsnews}} {{mars_news.news}}</h4>
-        <small>{{mars_image.image}}</small>
+        <h4 class="heading">{{marsnews}}</h4>
+        <small>{{marspic}}{{marsweather}}{{marshemi}}</small>
       </div>
     </div>
+    {% endfor %}
 
   </div>
 </body>

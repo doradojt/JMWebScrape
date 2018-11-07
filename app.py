@@ -21,13 +21,13 @@ def scrape():
     marsnews = scrape_mars.scrape_one()
     marspic = scrape_mars.scrape_two()
     marsweather = scrape_mars.scrape_three()
-    marstable = scrape_mars.scrape_four()
+    #marstable = scrape_mars.scrape_four()
     marshemi = scrape_mars.scrape_five()
 #updating mongo
     mars.update({}, marsnews, upsert=True)
     mars.update({}, marspic, upsert=True)
     mars.update({}, marsweather, upsert=True)
-    mars.update({}, marstable, upsert=True)
+    #mars.update({}, marstable, upsert=True)
     mars.update({}, marshemi, upsert=True)
 
     return redirect("/", code = 302)

@@ -14,3 +14,7 @@ def scraper():
 
 portion of the craigslist class work and how it connects with the 
 multiple dictionaries we made for mars?
+
+
+11/7/2018
+- fixed the flask and its publishing new windows when the scrapper runs...why?
