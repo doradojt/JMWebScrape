@@ -63,8 +63,10 @@ def scrape_three():
 
 def scrape_four():
     url = 'http://space-facts.com/mars/'
+    #select columns and 0 table
+    #used df and then column headings
     tables = pd.read_html(url)
-    return tables
+    return df.to_html(classes="table table-striped")
    
 def scrape_five():
     browser = init_browser()
