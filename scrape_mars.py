@@ -66,7 +66,12 @@ def scrape_four():
     #select columns and 0 table
     #used df and then column headings
     tables = pd.read_html(url)
-    return df.to_html(classes="table table-striped")
+    df = tables[0]
+    df.set_index('0')
+    df.columns=["",""]
+    mars_table = df.to_html(classes="table table-striped")
+
+    return mars_table
    
 def scrape_five():
     browser = init_browser()
