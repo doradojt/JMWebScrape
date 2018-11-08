@@ -17,12 +17,14 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Know Before you Go!</a></p>
     </div>
 
-    {% for mars in mars%}
-    <div class="row" id="craiglist-listings">
-      <div class="col-md-12">
-        <h4 class="heading">{{marsnews}}</h4>
-        <small>{{marspic}}{{marsweather}}{{marshemi}}</small>
-      </div>
+    {% for scrapedata in mars%}
+    <div class="col-lg-4">
+      <div class="card" style="width: 20rem;">
+          <div class="card-body">
+            <h4 class="card-title">Mars Data</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{ scrapedata.Headline }} - {{ scrapedata.Image }} : {{ scrapedata.News }}</h6>
+          </div>
+        </div>
     </div>
     {% endfor %}
 
