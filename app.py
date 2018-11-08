@@ -16,7 +16,7 @@ def echo():
     
 @app.route("/scrape")
 def scrape():
-    mars = mongo.db.mars
+    #mars = mongo.db.mars
 
 #tried a different way by making a dictionary in each scrape, then a new dict here
 
@@ -26,7 +26,7 @@ def scrape():
     #marstable = scrape_marsTWO.scrape_four()
     marshemi = scrape_marsTWO.scrape_five()
     
-    scrapedata = {
+    marsdict = {
         "Headline": marsnews["title"],
         "News": marsnews["news"],
         "Image": marspic["image"],
@@ -35,7 +35,7 @@ def scrape():
         "Hemitwo": marshemi["image_url"]
     }
 
-    mongo.db.collection.insert_one(scrapedata)
+    mongo.db.mars.insert_one(marsdict)
 #scraping
     #marsnews = scrape_marsTWO.scrape_one()
     #marspic = scrape_mars.scrape_two()
