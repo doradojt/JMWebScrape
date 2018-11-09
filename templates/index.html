@@ -18,32 +18,32 @@
     </div>
 
     {% for marsdict in mars%}
-    <div class="col-lg-3">
-      <div class="card" style="width: 20rem;">
+    <div class="col-lg-6">
+      <div class="card" style="width: 50rem;">
           <div class="card-body">
             <h4 class="card-title">Mars News</h4>
             <h6 class="card-subtitle mb-2 text-muted">{{ marsdict.Headline }} {{ marsdict.News }}</h6>
           </div>
         </div>
     </div>
-    <div class = "col-lg-3">
-      <div class="card" style="width: 20rem;">
+    <div class = "col-lg-6">
+      <div class="card" style="width: 50rem;">
         <div class = "card-body">
           <h4 class = "card-title">Mars Images</h4>
           <p>{{ marsdict.Image }}</p>
         </div>
       </div>
     </div>
-    <div class = "col-lg-3">
-      <div class="card" style="width: 20rem;">
+    <div class = "col-lg-6">
+      <div class="card" style="width: 50rem;">
         <div class = "card-body">
           <h4 class = "card-title">Mars Tweets</h4>
           <p>{{ marsdict.Weather }}</p>
         </div>
       </div>
     </div>
-    <div class = "col-lg-3">
-      <div class="card" style="width: 20rem;">
+    <div class = "col-lg-6">
+      <div class="card" style="width: 50rem;">
         <div class = "card-body">
           <h4 class = "card-title">Mars Hemisphere</h4>
           <p>{{ marsdict.Hemisphere }} - {{ marsdict.Hemitwo }}</p>
@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class = "col-lg-12">
-      <div class="card" style="width: 20rem;">
+      <div class="card">
         <div class = "card-body">
           <h4 class = "card-title">Mars Table</h4>
           <p>{{ marsdict.Table }}</p>
