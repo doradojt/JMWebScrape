@@ -67,16 +67,20 @@ def scrape_three():
     return marsweather
 
 
-#def scrape_four():
-    #url = 'http://space-facts.com/mars/'
+def scrape_four():
+    url = 'http://space-facts.com/mars/'
     #select columns and 0 table
     #used df and then column headings
-    #tables = pd.read_html(url)
-    #df = tables[0]
+    tables = pd.read_html(url)
+    df = tables[0]
     #df.columns=["",""]
-    #mars_table = df.to_html(classes="table table-striped")
+    mars_table = df.to_html(classes="table table-striped")
 
-    #return mars_table
+    marstable = {
+    "table" :mars_table
+    }
+
+    return marstable
    
 def scrape_five():
     browser = init_browser()

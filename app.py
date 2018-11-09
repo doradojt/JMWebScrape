@@ -23,7 +23,7 @@ def scrape():
     marsnews = scrape_marsTWO.scrape_one()
     marspic = scrape_marsTWO.scrape_two()
     marsweather = scrape_marsTWO.scrape_three()
-    #marstable = scrape_marsTWO.scrape_four()
+    marstable = scrape_marsTWO.scrape_four()
     marshemi = scrape_marsTWO.scrape_five()
     
     marsdict = {
@@ -31,6 +31,7 @@ def scrape():
         "News": marsnews["news"],
         "Image": marspic["image"],
         "Weather": marsweather["surface weather"],
+        "Table": marstable["table"],
         "Hemisphere": marshemi["title_two"],
         "Hemitwo": marshemi["image_url"]
     }
