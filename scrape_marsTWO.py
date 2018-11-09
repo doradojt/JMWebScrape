@@ -66,8 +66,9 @@ def scrape_four():
     #used df and then column headings
     tables = pd.read_html(url)
     df = tables[0]
-    #df.columns=["",""]
-    mars_table = df.to_html(classes="table table-striped")
+    df.columns=["Description","Value"]
+    df.set_index('Description')
+    mars_table = df.to_html(classes=["table table-striped"])
 
     marstable = {"table" : mars_table}
 
@@ -76,7 +77,7 @@ def scrape_four():
 def scrape_five():
     browser = init_browser()
 
-    url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced'
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(url)  
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
