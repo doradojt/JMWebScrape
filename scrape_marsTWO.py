@@ -76,18 +76,18 @@ def scrape_four():
 def scrape_five():
     browser = init_browser()
 
-    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced'
     browser.visit(url)  
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    results = soup.find_all(class_='description')
+    results = soup.find_all(class_='item')
 
     marshemi ={}
     for result in results:
-        a = result.find('a')
-        img_url = a['href']
-        title = a.find('h3').text
+        img = result.find('img')
+        img_url = img['src']
+        title = result.find('h3').text
         marshemi.update({title:('https://astrogeology.usgs.gov'+img_url)})
 
     marshemi ={"title" : title, "image_url" : ("https://astrogeology.usgs.gov" + img_url)}

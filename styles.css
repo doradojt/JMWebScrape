@@ -29,3 +29,16 @@ font-weight: bold;
     font-weight:bold;
 }
 
+#h4 {
+    color: black;
+    font-size: 4px;
+    font-family: Georgia, 'TImes New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
