@@ -32,7 +32,7 @@ def scrape():
         "Image": marspic["image"],
         "Weather": marsweather["surface weather"],
         "Table": marstable["table"],
-        "Hemisphere": marshemi["title_two"],
+        "Hemisphere": marshemi["title"],
         "Hemitwo": marshemi["image_url"]
     }
 

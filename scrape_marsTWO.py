@@ -22,10 +22,7 @@ def scrape_one():
     news_title_name = news_title.find('a').get_text()
     news_p = text.find(class_='article_teaser_body').get_text()
 
-    marsnews = {
-    "title" : news_title_name,
-    "news" : news_p
-    }
+    marsnews = {"title" : news_title_name,"news" : news_p}
 
     return marsnews
 
@@ -43,9 +40,7 @@ def scrape_two():
     link = images.find('article')   
     url = link['style']
 
-    marspic= { 
-    "image": ('https://www.jpl.nasa.gov/' + url[23:75]),
-    }
+    marspic= { "image": ('https://www.jpl.nasa.gov/' + url[23:75])}
 
     return marspic
 
@@ -61,9 +56,7 @@ def scrape_three():
     tweets = soup.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text')
     tweetweather = tweets.text
 
-    marsweather = {
-    "surface weather" : tweetweather
-    }
+    marsweather = {"surface weather" : tweetweather}
     return marsweather
 
 
@@ -76,9 +69,7 @@ def scrape_four():
     #df.columns=["",""]
     mars_table = df.to_html(classes="table table-striped")
 
-    marstable = {
-    "table" :mars_table
-    }
+    marstable = {"table" : mars_table}
 
     return marstable
    
@@ -92,14 +83,14 @@ def scrape_five():
 
     results = soup.find_all(class_='description')
 
+    marshemi ={}
     for result in results:
         a = result.find('a')
         img_url = a['href']
         title = a.find('h3').text
-        
-    marshemi ={
-    "title_two" : title,
-    "image_url" : img_url
-    }
+        marshemi.update({title:('https://astrogeology.usgs.gov'+img_url)})
+
+    marshemi ={"title" : title, "image_url" : ("https://astrogeology.usgs.gov" + img_url)}
     
     return marshemi 
+    #for loop works in jupyter, prints all links, but dictionary only stores last result
