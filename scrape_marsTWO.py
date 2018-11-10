@@ -77,21 +77,99 @@ def scrape_four():
 def scrape_five():
     browser = init_browser()
 
-    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced'
     browser.visit(url)  
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    results = soup.find_all(class_='item')
+    results = soup.find_all(class_='downloads')
+    resultstwo = soup.find_all(class_='content')
 
-    marshemi ={}
+    marsone ={}
     for result in results:
-        img = result.find('img')
-        img_url = img['src']
-        title = result.find('h3').text
-        marshemi.update({title:('https://astrogeology.usgs.gov'+img_url)})
+        img = result.find('a')
+        img_urlone = img['href']
+        
+    for result in resultstwo:
+        titleone = result.find('h2').text
+        
+    marsone.update({titleone:(img_urlone)})
 
-    marshemi ={"title" : title, "image_url" : ("https://astrogeology.usgs.gov" + img_url)}
+    marsone ={"title" : titleone, "img_url" : img_urlone}
     
-    return marshemi 
-    #for loop works in jupyter, prints all links, but dictionary only stores last result
+    return marsone
+
+def scrape_six():
+    browser= init_browser()
+
+    url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced'
+    browser.visit(url)
+    html=browser.html
+    soup=BeautifulSoup(html,'html.parser')
+
+    results = soup.find_all(class_='downloads')
+    resultstwo = soup.find_all(class_='content')
+
+    marstwo={}
+    for result in results:
+        img = result.find('a')
+        img_urltwo = img['href']
+
+    for result in resultstwo:
+        titletwo = result.find('h2').text
+
+    marstwo.update({titletwo:(img_urltwo)})
+
+    marstwo ={"title" : titletwo, "img_url" : img_urltwo}
+
+    return marstwo
+
+def scrape_seven():
+    browser= init_browser()
+
+    url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced'
+    browser.visit(url)
+    html=browser.html
+    soup=BeautifulSoup(html,'html.parser')
+
+    results = soup.find_all(class_='downloads')
+    resultstwo = soup.find_all(class_='content')
+
+    marsthree={}
+    for result in results:
+        img = result.find('a')
+        img_urlthree = img['href']
+
+    for result in resultstwo:
+        titlethree = result.find('h2').text
+
+    marsthree.update({titlethree:(img_urlthree)})
+
+    marsthree ={"title" : titlethree, "img_url" : img_urlthree}
+
+    return marsthree
+
+def scrape_eight():
+    browser=init_browser()
+
+    url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced'
+    browser.visit(url)
+    html=browser.html
+    soup=BeautifulSoup(html,'html.parser')
+
+    results = soup.find_all(class_='downloads')
+    resultstwo = soup.find_all(class_='content')
+
+    marsfour={}
+    for result in results:
+        img = result.find('a')
+        img_urlfour = img['href']
+
+    for result in resultstwo:
+        titlefour = result.find('h2').text
+
+    marsfour.update({titlefour:(img_urlfour)})
+
+    marsfour ={"title" : titlefour, "img_url" : img_urlfour}
+
+    return marsfour
