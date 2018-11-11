@@ -62,8 +62,6 @@ def scrape_three():
 
 def scrape_four():
     url = 'http://space-facts.com/mars/'
-    #select columns and 0 table
-    #used df and then column headings
     tables = pd.read_html(url)
     df = tables[0]
     df.columns=["Description","Value"]

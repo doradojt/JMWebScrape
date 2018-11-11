@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mars Attacks!</title>
-  <link rel="stylesheet" href = "styles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,24 +19,27 @@
     </div>
 
     {% for marsdict in mars%}
-  <div class = "container-fluid">
-    <div class = "row">
-      <div class="col-md-12">
-          <h2 id="h2">Latest Mars News</h2>
-            <h3 id="h3">{{ marsdict.Headline }}</h3>
-              <p>{{ marsdict.News }}</p>
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class="col-md-12">
+            <h2 id="h2">Latest Mars News</h2>
+              <h3 id="h3">{{ marsdict.Headline }}</h3>
+                <p>{{ marsdict.News }}</p>
+        </div>
       </div>
     </div>
-    <div class = "row">
+    <div class ="container-fluid">
       <div class = "col-md-6">
-          <h2 id="h2">Featured Mars Image</h2>
+        <div class="row">
+          <h3 id="h3">Featured Mars Image</h3>
             <img src = "{{ marsdict.Image }}" alt= "Daily Image" style="width:500px;height:470px;">
+        </div>
       </div>
       <div class = "col-md-6">
-        <div id = "boxwhite" class = "row">
+        <div class = "row" id="border">
           <div class ="column">
             <h3 id="h3">Current Weather on Mars</h3>
-              <p id="p">{{ marsdict.Weather }}</p>
+              <p>{{ marsdict.Weather }}</p>
           </div>
         </div>
         <div class = "row">
@@ -46,41 +49,40 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class = "row">
-      <div class = "col-md-12">
-        <h2 id="h5">Mars Hemisphere</h2>
-      </div>
-        <div class = "row">
-          <div class = "col-md-6">
-            <div class ="thumbnail">
-            <h4 id="h4">{{ marsdict.hem1 }}</h4>
-              <img src = "{{ marsdict.hem1img }}" alt = "Cerberus" stlye="width:25%">
-            </div>
-          </div>
-          <div class = "col-md-6">
-            <div class = "thumbnail">
-            <h4 id="h4">{{ marsdict.hem2 }}</h4>
-              <img src = "{{ marsdict.hem2img }}" alt = "Syrtis" stlye="width:25%"> 
-            </div>   
-          </div> 
+      <div class = "row">
+        <div class = "col-md-12">
+          <h4 id="h4">Mars Hemisphere</h4>
         </div>
-        <div class = "row">
-          <div class = "col-md-6">
-            <div class = "thumbnail">
-            <h4 id="h4">{{ marsdict.hem3 }}</h4>
-              <img src = "{{ marsdict.hem3img }}" alt = "Valles" stlye="width:25%">
+          <div class = "row">
+            <div class = "col-md-6">
+              <div class ="thumbnail">
+              <h5 id="h5">{{ marsdict.hem1 }}</h5>
+                <img src = "{{ marsdict.hem1img }}" alt = "Cerberus" stlye="width:25%">
+              </div>
             </div>
+            <div class = "col-md-6">
+              <div class = "thumbnail">
+              <h5 id="h5">{{ marsdict.hem2 }}</h5>
+                <img src = "{{ marsdict.hem2img }}" alt = "Syrtis" stlye="width:25%"> 
+              </div>   
+            </div> 
           </div>
-          <div class = "col-md-6">
-            <div class = "thumbnail">
-            <h4 id="h4">{{ marsdict.hem4 }}</h4>
-              <img src = "{{ marsdict.hem4img }}" alt = "Schiaparelli" stlye="width:25%">
+          <div class = "row">
+            <div class = "col-md-6">
+              <div class = "thumbnail">
+              <h5 id="h5">{{ marsdict.hem3 }}</h5>
+                <img src = "{{ marsdict.hem3img }}" alt = "Valles" stlye="width:25%">
+              </div>
             </div>
-          </div> 
-        </div>      
-    </div>  
-  </div>
+            <div class = "col-md-6">
+              <div class = "thumbnail">
+              <h5 id="h5">{{ marsdict.hem4 }}</h5>
+                <img src = "{{ marsdict.hem4img }}" alt = "Schiaparelli" stlye="width:25%">
+              </div>
+            </div> 
+          </div>      
+      </div>  
+    </div>
       {% endfor %}
 
   </div>
